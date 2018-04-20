@@ -66,14 +66,18 @@ function drawLogo(o, cl) {
 		c1.setAttribute('r', 60);
 		c0.setAttribute('fill', 'white');
 		c1.setAttribute('fill', 'white');
-		l.setAttribute('stroke-width', 9);
+		l.setAttribute('stroke-width', 20);
+            l.setAttribute('stroke-linejoin', 'round');
+
 	}
 	function smally() {
 		c0.setAttribute('r', 20);
 		c1.setAttribute('r', 50);
 		c0.setAttribute('fill', shade(o.c, 0.66));
 		c1.setAttribute('fill', shade(o.c, 0.66));
-		l.setAttribute('stroke-width', 5);
+		l.setAttribute('stroke-width', 10);
+            l.setAttribute('stroke-linejoin', 'round');
+
 	}
     c0.addEventListener("mouseover", function(event){
 		biggly();
@@ -94,6 +98,12 @@ function drawLogo(o, cl) {
 		smally();
 	});
 
+}
+
+function writeText()
+{
+
+    
 }
 
 function drawCircle(color, r, pos, cl)
@@ -117,7 +127,9 @@ function drawLine(color, points, cl)
     l.setAttribute('points', points);
     l.setAttribute('stroke', color);
     l.setAttribute('fill', 'none');
-    l.setAttribute('stroke-width', 5);
+    l.setAttribute('stroke-width', 10);
+    l.setAttribute('stroke-linejoin', 'round');
+
     svg.appendChild(l);
 	return l;
 }
