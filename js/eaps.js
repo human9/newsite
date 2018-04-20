@@ -100,12 +100,6 @@ function drawLogo(o, cl) {
 
 }
 
-function writeText()
-{
-
-    
-}
-
 function drawCircle(color, r, pos, cl)
 {
     var c = document.createElementNS(svgNS, 'circle');
