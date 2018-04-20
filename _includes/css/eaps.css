@@ -1,0 +1,70 @@
+#svg_region {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.logo {
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: dash 2s linear forwards;
+  transition: 0.3s;
+}
+
+.logo0 {
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: dash 0.5s linear forwards;
+  animation-delay: 1.2s;
+  opacity: 0;
+  transition: 0.3s;
+}
+.logo1 {
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: dash 0.5s linear forwards;
+  animation-delay: 1s;
+  opacity: 0;
+  transition: 0.3s;
+}
+.logo2 {
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: dash 0.5s linear forwards;
+  animation-delay: 1s;
+  opacity: 0;
+  transition: 0.3s;
+}
+.logo3 {
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: dash 0.5s linear forwards;
+  animation-delay: 0.9s;
+  opacity: 0;
+  transition: 0.3s;
+}
+.logo4 {
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: dash 0.5s linear forwards;
+  animation-delay: 1.3s;
+  opacity: 0;
+  transition: 0.3s;
+}
+.logo5 {
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: dash 0.5s linear forwards;
+  animation-delay: 1.2s;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+@keyframes dash {
+	to {
+		stroke-dashoffset: 0;
+		opacity: 1;
+	}
+}
