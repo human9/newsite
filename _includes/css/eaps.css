@@ -23,44 +23,35 @@
   stroke-dasharray: 4500;
   stroke-dashoffset: 4500;
   animation: dash 2s linear forwards;
-  animation-delay: 1s;
   transition: 0.3s;
   visibility: hidden;
 }
 
-.logo0 {
+.c1_0 {
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
   animation: dash 0.5s linear forwards;
-  animation-delay: 1.2s;
+  animation-delay: 1.8s;
   opacity: 0;
   transition: 0.3s;
 }
-.logo1 {
+.c1_1 {
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
   animation: dash 0.5s linear forwards;
-  animation-delay: 1s;
+  animation-delay: 1.5s;
   opacity: 0;
   transition: 0.3s;
 }
-.logo2 {
+.c1_2 {
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
   animation: dash 0.5s linear forwards;
-  animation-delay: 1s;
+  animation-delay: 1.5s;
   opacity: 0;
   transition: 0.3s;
 }
-.logo3 {
-  stroke-dasharray: 3000;
-  stroke-dashoffset: 3000;
-  animation: dash 0.5s linear forwards;
-  animation-delay: 0.9s;
-  opacity: 0;
-  transition: 0.3s;
-}
-.logo4 {
+.c1_3 {
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
   animation: dash 0.5s linear forwards;
@@ -68,11 +59,19 @@
   opacity: 0;
   transition: 0.3s;
 }
-.logo5 {
+.c1_4 {
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
   animation: dash 0.5s linear forwards;
-  animation-delay: 1.2s;
+  animation-delay: 1.8s;
+  opacity: 0;
+  transition: 0.3s;
+}
+.c1_5 {
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: dash 0.5s linear forwards;
+  animation-delay: 1.8s;
   opacity: 0;
   transition: 0.3s;
 }
