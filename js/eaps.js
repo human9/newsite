@@ -1,84 +1,140 @@
 var svg =  document.getElementById('svg_region');
 var svgNS = svg.namespaceURI;
 
-var w = 1900;
-var pstart = [w/2-100, 400]; // start of parallel lines
-var step = 18; // distance between lines
-var pend = [pstart[0]+200, pstart[1]+160];
+var begin = [1563, 453] // beginning point, from green line at the point it begins the negative slope
+var lw = 24
+var step = 34+lw // distance between lines
+var angle = 0.567232 // angle of the thingy
 
-var mind = {c: '#0000FF', c0: [190,160], c1: [w- 397,257], l: []};
-var leaf = {c: '#3AB649', c0: [120,210], c1: [w- 300,320], l: []};
-var comp = {c: '#662D91', c0: [225,663], c1: [w- 355,505], l: []};
-var blob = {c: '#ED1C23', c0: [82,pstart[1] + step*3], c1: [w- 336,790], l: []};
-var meds = {c: '#F7931E', c0: [300,771], c1: [w- 200,404], l: []};
-var vrus = {c: '#FFFF02', c0: [111,801], c1: [w- 210,pend[1]+5*step], l: []};
+var r0 = 38 + lw/2
+var r1 = 100
 
-	var i = 0;
-logos = [leaf, mind, comp, blob, meds, vrus];
-for (var l = 0; l < logos.length; l++) {
-    logos[l].l.push(logos[l].c0);
-    if(l == 4) {
-        logos[l].l.push([logos[l].c0[0]-140, logos[l].c0[1]]);
-        logos[l].l.push([logos[l].c0[0]-140, pstart[1]+step*l]);
+
+var leaf = '#4eae33'
+var mind = '#64c5e4'
+var comp = '#64328a'
+var gene = '#e5262a'
+var vrus = '#f39323'
+var cncr = '#f3e600'
+
+colours = [leaf, mind, comp, gene, vrus, cncr]
+
+
+window.onload = function(e){ 
+    for (let i = 0; i < colours.length; i++) {
+
+        let line = []
+        let start = [begin[0], begin[1] + i*step]
+        line.push(start)
+        
+        let c0 = [0,0]
+        let c1 = [0,0]
+
+        let ad = 513.5
+
+        switch(i) {
+
+            case 0:
+                line.unshift([start[0]-1308, start[1]])
+                line.unshift([start[0]-1308, start[1]-171])
+                c0 = [start[0]-1308, start[1]-171]
+                var n = [start[0] + (ad*Math.cos(angle)), start[1] + (ad*Math.sin(angle))]
+                line.push(n)
+                line.push(n[0]+526, n[1])
+                line.push(n[0]+526, n[1]-221)
+                line.push(n[0]+526+998, n[1]-221)
+                line.push(n[0]+526+998, n[1]-221-224)
+                c1 = [n[0]+526+998, n[1]-221-224]
+
+            break;
+
+            case 1:
+                line.unshift([start[0]-1161, start[1]])
+                line.unshift([start[0]-1161, start[1]-327])
+                c0 = [start[0]-1161, start[1]-327]
+                var n = [start[0] + (ad*Math.cos(angle)), start[1] + (ad*Math.sin(angle))]
+                line.push(n)
+                line.push(n[0]+642, n[1])
+                line.push(n[0]+642, n[1]-473)
+                line.push(n[0]+642+558, n[1]-473)
+                c1 = [n[0]+642+558, n[1]-473]
+            break;
+
+            case 2:
+                line.unshift([start[0]-1209, start[1]])
+                line.unshift([start[0]-1209, start[1]+354])
+                line.unshift([start[0]-1209+105, start[1]+354])
+                c0 = [start[0]-1209+105, start[1]+354]
+                var n = [start[0] + (598*Math.cos(angle)), start[1] + (598*Math.sin(angle))]
+                line.push(n)
+                line.push(n[0]+940, n[1])
+                line.push(n[0]+940, n[1]-72)
+                line.push(n[0]+940+296, n[1]-72)
+                c1 = [n[0]+940+296, n[1]-72]
+            break;
+
+            case 3:
+                line.unshift([start[0]-1380, start[1]])
+                c0 = [start[0]-1380, start[1]]
+                var n = [start[0] + (1083*Math.cos(angle)), start[1] + (1083*Math.sin(angle))]
+                line.push(n)
+                line.push(n[0]+845, n[1])
+                c1 = [n[0]+845, n[1]]
+            break;
+
+            case 4:
+                line.unshift([start[0]-1240, start[1]])
+                line.unshift([start[0]-1240, start[1]+423])
+                line.unshift([start[0]-1240+237, start[1]+423])
+                c0 = [start[0]-1240+237, start[1]+423]
+                var n = [start[0] + (ad*Math.cos(angle)), start[1] + (ad*Math.sin(angle))]
+                line.push(n)
+                line.push(n[0]+828, n[1])
+                line.push(n[0]+828, n[1]-355)
+                line.push(n[0]+828+885, n[1]-355)
+                c1 = [n[0]+828+885, n[1]-355]
+                break;
+
+            case 5:
+                line.unshift([start[0]-1300, start[1]])
+                line.unshift([start[0]-1300, start[1]+504])
+                c0 = [start[0]-1300, start[1]+504]
+                var n = [start[0] + (ad*Math.cos(angle)), start[1] + (ad*Math.sin(angle))]
+                line.push(n)
+                line.push(n[0]+1606, n[1])
+                c1 = [n[0]+1606, n[1]]
+            break;
+        }
+
+        let drawnLine = drawLine(colours[i], line, "logo")
+        let circle0 = drawCircle(colours[i], r0, c0, "logo c0")
+        let circle1 = drawCircle(colours[i], r1, c1, "logo" + i)
+        makeInteractive(i, drawnLine, circle0, circle1)
     }
-    logos[l].l.push([logos[l].c0[0], pstart[1] + step * l]);
-    logos[l].l.push([pstart[0], pstart[1] + step * l]);
-    logos[l].l.push([pend[0], pend[1] + step * l]);
-    switch(l) {
-        case 0:
-            logos[l].l.push([pstart[0]+300, pend[1]]);
-            logos[l].l.push([pstart[0]+300, logos[l].c1[1]]);
-        break;
-        case 1:
-            logos[l].l.push([pstart[0]+350, pend[1]+step*l]);
-            logos[l].l.push([pstart[0]+350, logos[l].c1[1]]);
-        break;
-        case 2:
-            logos[l].l.push([pstart[0]+410, pend[1]+step*l]);
-            logos[l].l.push([pstart[0]+410, logos[l].c1[1]]);
-        break;
-        case 3:
-            y = logos[l].c1[1];
-            logos[l].l.push([pend[0]+210, y]);
-        break;
-        case 4:
-            logos[l].l.push([pstart[0]+380, pend[1]+step*l]);
-            logos[l].l.push([pstart[0]+380, logos[l].c1[1]]);
 
-        break;
-        case 5:
-
-        break;
-    }
-    logos[l].l.push(logos[l].c1);
-    drawLogo(logos[l], 'logo');
 }
 
 
-function drawLogo(o, cl) {
-    var l = drawLine(o.c, o.l, cl)
-    var c0 = drawCircle(o.c, 20, o.c0, cl);
-    var c1 = drawCircle(o.c, 40, o.c1, cl+i);
-	i++;
+function makeInteractive(i, l, c0, c1) {
 
 	function biggly() {
-		c0.setAttribute('r', 30);
-		c1.setAttribute('r', 60);
+		c0.setAttribute('r', r0+20);
+		c1.setAttribute('r', r1 + 20);
 		c0.setAttribute('fill', 'white');
 		c1.setAttribute('fill', 'white');
-		l.setAttribute('stroke-width', 20);
-            l.setAttribute('stroke-linejoin', 'round');
-
+		l.setAttribute('stroke-width', lw+10);
+        l.setAttribute('stroke-linejoin', 'round');
 	}
+
 	function smally() {
-		c0.setAttribute('r', 20);
-		c1.setAttribute('r', 50);
-		c0.setAttribute('fill', shade(o.c, 0.66));
-		c1.setAttribute('fill', shade(o.c, 0.66));
-		l.setAttribute('stroke-width', 10);
-            l.setAttribute('stroke-linejoin', 'round');
-
+		c0.setAttribute('r', r0);
+		c1.setAttribute('r', r1);
+		c0.setAttribute('fill', shade(colours[i], 0.66));
+		c1.setAttribute('fill', shade(colours[i], 0.66));
+		l.setAttribute('stroke-width', lw);
+        l.setAttribute('stroke-linejoin', 'round');
 	}
+
     c0.addEventListener("mouseover", function(event){
 		biggly();
 	});
@@ -102,26 +158,26 @@ function drawLogo(o, cl) {
 
 function drawCircle(color, r, pos, cl)
 {
-    var c = document.createElementNS(svgNS, 'circle');
+    let c = document.createElementNS(svgNS, 'circle');
     c.setAttribute('class', cl);
     c.setAttribute('cx', pos[0]);
     c.setAttribute('cy', pos[1]);
     c.setAttribute('r', r);
     c.setAttribute('fill', shade(color, 0.66));
     c.setAttribute('stroke', color);
-    c.setAttribute('stroke-width', 5);
+    c.setAttribute('stroke-width', lw);
     svg.appendChild(c);
 	return c;
 }
 
 function drawLine(color, points, cl)
 {
-    var l = document.createElementNS(svgNS, 'polyline');
+    let l = document.createElementNS(svgNS, 'polyline');
     l.setAttribute('class', cl);
     l.setAttribute('points', points);
     l.setAttribute('stroke', color);
     l.setAttribute('fill', 'none');
-    l.setAttribute('stroke-width', 10);
+    l.setAttribute('stroke-width', lw);
     l.setAttribute('stroke-linejoin', 'round');
 
     svg.appendChild(l);

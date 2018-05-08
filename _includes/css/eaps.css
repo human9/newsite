@@ -20,10 +20,12 @@
 }
 
 .logo {
-  stroke-dasharray: 3000;
-  stroke-dashoffset: 3000;
+  stroke-dasharray: 4500;
+  stroke-dashoffset: 4500;
   animation: dash 2s linear forwards;
+  animation-delay: 1s;
   transition: 0.3s;
+  visibility: hidden;
 }
 
 .logo0 {
@@ -79,5 +81,6 @@
 	to {
 		stroke-dashoffset: 0;
 		opacity: 1;
+    visibility: visible;
 	}
 }
