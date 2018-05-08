@@ -6,6 +6,19 @@
   top: -50px;
 }
 
+.navbar {
+  min-height: 30px;
+}
+
+.navbar-brand {
+  padding: 5px 5px 5px;
+}
+
+.navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .logo {
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
