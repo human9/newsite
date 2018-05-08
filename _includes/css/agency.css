@@ -172,7 +172,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default {
     border-color: transparent;
-    background-color: #222;
+    background-color: rgba(0,0,0,.6);
 }
 
 .navbar-default .navbar-brand {
@@ -305,9 +305,27 @@ header .intro-text {
     padding-bottom: 50px;
 }
 
+header .intro-mid {
+    padding-top: 0px;
+    padding-bottom: 10px;
+	font-size: 23px;
+    font-style: italic;
+    font-family: {{ site.data.template.font.secondary }};
+}
 header .intro-lower {
     padding-top: 0px;
     padding-bottom: 50px;
+	font-size: 18px;
+    font-style: italic;
+    font-family: {{ site.data.template.font.secondary }};
+}
+
+header .preface {
+    padding-top: 0px;
+    padding-bottom: 10px;
+	font-size: 18px;
+    font-style: italic;
+    font-family: {{ site.data.template.font.secondary }};
 }
 
 header .intro-text .intro-lead-in {
