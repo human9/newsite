@@ -254,6 +254,14 @@ fieldset[disabled] .btn-xl.active {
         transition: all .3s;
     }
 
+	.navbar-default .nav li a {
+		color: #000;
+	}
+    
+	.navbar-default.navbar-shrink .nav li a {
+		color: #fff;
+	}
+
     .navbar-default .navbar-nav>.active>a {
         border-radius: 3px;
     }
@@ -274,7 +282,12 @@ fieldset[disabled] .btn-xl.active {
 
 header {
     text-align: center;
-    color: #fff;
+    color: #1b3b11;
+	background-color: #c3e3ba;	
+	transition: background-color 800ms linear;
+}
+
+.photo_bg {
     background-attachment: scroll;
     background-image: url('{{ site.baseurl }}/img/header-bg.jpg');
     background-position: center center;
@@ -283,9 +296,11 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+	background-blend-mode: multiply;
 }
 
 header .intro-text {
+	transition: color 800ms linear;
     padding-top: 100px;
     padding-bottom: 50px;
 }

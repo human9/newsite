@@ -1,5 +1,7 @@
 var svg =  document.getElementById('svg_region');
 var svgNS = svg.namespaceURI;
+var header =  document.getElementById('header');
+var headtext =  document.getElementById('headtext');
 
 var begin = [1563, 453] // beginning point, from green line at the point it begins the negative slope
 var lw = 24
@@ -106,9 +108,9 @@ window.onload = function(e){
             break;
         }
 
-        let drawnLine = drawLine(colours[i], line, "logo")
-        let circle0 = drawCircle(colours[i], r0, c0, "logo c0")
-        let circle1 = drawCircle(colours[i], r1, c1, "logo" + i)
+        let drawnLine = drawLine(colours[i], line, "logo pl_" + i)
+        let circle0 = drawCircle(colours[i], r0, c0, "logo c0_" + i)
+        let circle1 = drawCircle(colours[i], r1, c1, "logo c1_" + i)
         makeInteractive(i, drawnLine, circle0, circle1)
     }
 
@@ -118,6 +120,8 @@ window.onload = function(e){
 function makeInteractive(i, l, c0, c1) {
 
 	function biggly() {
+		header.style.backgroundColor = shade(colours[i], 0.66);
+		headtext.style.color = shade(colours[i], -0.66);
 		c0.setAttribute('r', r0+20);
 		c1.setAttribute('r', r1 + 20);
 		c0.setAttribute('fill', 'white');
