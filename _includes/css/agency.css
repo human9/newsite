@@ -192,8 +192,8 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #{{ site.data.template.color.primary }};
-    background-color: #{{ site.data.template.color.primary }};
+    border-color: #6d6d6d;
+    background-color: #515151;
 }
 
 .navbar-default .navbar-toggle .icon-bar {

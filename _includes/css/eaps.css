@@ -19,67 +19,18 @@
   padding-bottom: 10px;
 }
 
-.logo {
-  stroke-dasharray: 4500;
-  stroke-dashoffset: 4500;
-  animation: dash 2s linear forwards;
-  transition: 0.3s;
-  visibility: hidden;
-}
-
-.c1_0 {
-  stroke-dasharray: 3000;
-  stroke-dashoffset: 3000;
-  animation: dash 0.5s linear forwards;
-  animation-delay: 1.8s;
-  opacity: 0;
-  transition: 0.3s;
-}
-.c1_1 {
-  stroke-dasharray: 3000;
-  stroke-dashoffset: 3000;
-  animation: dash 0.5s linear forwards;
-  animation-delay: 1.5s;
-  opacity: 0;
-  transition: 0.3s;
-}
-.c1_2 {
-  stroke-dasharray: 3000;
-  stroke-dashoffset: 3000;
-  animation: dash 0.5s linear forwards;
-  animation-delay: 1.5s;
-  opacity: 0;
-  transition: 0.3s;
-}
-.c1_3 {
-  stroke-dasharray: 3000;
-  stroke-dashoffset: 3000;
-  animation: dash 0.5s linear forwards;
-  animation-delay: 1.3s;
-  opacity: 0;
-  transition: 0.3s;
-}
-.c1_4 {
-  stroke-dasharray: 3000;
-  stroke-dashoffset: 3000;
-  animation: dash 0.5s linear forwards;
-  animation-delay: 1.8s;
-  opacity: 0;
-  transition: 0.3s;
-}
-.c1_5 {
-  stroke-dasharray: 3000;
-  stroke-dashoffset: 3000;
-  animation: dash 0.5s linear forwards;
-  animation-delay: 1.8s;
-  opacity: 0;
-  transition: 0.3s;
-}
-
 @keyframes dash {
 	to {
 		stroke-dashoffset: 0;
 		opacity: 1;
     visibility: visible;
 	}
+}
+
+@keyframes remove {
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+    visibility: visible;
+  }
 }

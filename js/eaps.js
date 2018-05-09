@@ -11,7 +11,6 @@ var angle = 0.567232 // angle of the thingy
 var r0 = 38 + lw/2
 var r1 = 100
 
-
 var leaf = '#4eae33'
 var mind = '#64c5e4'
 var comp = '#64328a'
@@ -21,8 +20,89 @@ var cncr = '#f3e600'
 
 colours = [leaf, mind, comp, gene, vrus, cncr]
 
+components = [];
+
+var active = 6;
+
+function randomPath(i) {
+
+    let c0 = components[i].c0;
+    let c1 = components[i].c1;
+    let l = components[i].l;
+
+    svg.removeChild(l);
+    svg.removeChild(c0);
+    svg.removeChild(c1);
+
+    let time = Math.random() * 2 + 2;
+    c0.style.strokeDasharray = polyLineLength(l);
+    c0.style.strokeDashoffset = polyLineLength(l);
+    c0.style.animation = "dash " + time + "s ease-in-out forwards";
+    c0.style.transition = "0.3s";
+    c0.style.visibility = "hidden";
+    c0.style.visibility = "hidden";
+
+    c1.style.strokeDasharray = "2000";
+    c1.style.strokeDashoffset = "2000";
+    c1.style.opacity = "0.4";
+    c1.style.animation = "dash 1s ease-in-out forwards";
+    c1.style.animationDelay = time - 0.2 + "s";
+    c1.style.transition = "0.3s";
+    c1.style.visibility = "hidden";
+
+    l.style.strokeDasharray = polyLineLength(l);
+    l.style.strokeDashoffset = polyLineLength(l);
+    l.style.animation = "dash " + time + "s ease-in-out forwards";
+    l.style.transition = "0.3s";
+    l.style.visibility = "hidden";
+
+    svg.appendChild(l);
+    svg.appendChild(c0);
+    svg.appendChild(c1);
+
+    // element added back in
+    active += 1;
+
+    window.setTimeout(function() {
+        randomRemove(i);
+    }, (Math.random() * 25 + 5) * 1000);
+}
+
+
+function randomRemove(i) {
+
+    let percent = active / 6; // percentage currently active
+
+    if(percent * Math.random() < 0.3) {
+        console.log("denied")
+        window.setTimeout(function() {
+             randomRemove(i);
+        }, (Math.random() * 25 + 5) * 1000);
+        return;
+    }
+
+
+    // element removed, decrease likelihood others will follow suit.
+    active -= 1;
+
+    let c0 = components[i].c0;
+    let c1 = components[i].c1;
+    let l = components[i].l;
+
+    let time = Math.random() * 2 + 2;
+
+    c0.style.animation = "remove " + time + "s ease-in-out reverse";
+    c1.style.animation = "remove 0.8s ease-in-out reverse";
+    l.style.animation = "remove " + time + "s ease-in-out reverse";
+
+    window.setTimeout(function() {
+        randomPath(i);
+    }, time * 1000 + 500);
+}
+
 
 window.onload = function(e){ 
+
     for (let i = 0; i < colours.length; i++) {
 
         let line = []
@@ -45,7 +125,7 @@ window.onload = function(e){
                 line.push(n[0]+526, n[1])
                 line.push(n[0]+526, n[1]-221)
                 line.push(n[0]+526+998, n[1]-221)
-                line.push(n[0]+526+998, n[1]-221-224)
+                line.push(n[0]+526+998, n[1]-221-224+r1)
                 c1 = [n[0]+526+998, n[1]-221-224]
 
             break;
@@ -58,7 +138,7 @@ window.onload = function(e){
                 line.push(n)
                 line.push(n[0]+642, n[1])
                 line.push(n[0]+642, n[1]-473)
-                line.push(n[0]+642+558, n[1]-473)
+                line.push(n[0]+642+558-r1, n[1]-473)
                 c1 = [n[0]+642+558, n[1]-473]
             break;
 
@@ -71,7 +151,7 @@ window.onload = function(e){
                 line.push(n)
                 line.push(n[0]+940, n[1])
                 line.push(n[0]+940, n[1]-72)
-                line.push(n[0]+940+296, n[1]-72)
+                line.push(n[0]+940+296-r1, n[1]-72)
                 c1 = [n[0]+940+296, n[1]-72]
             break;
 
@@ -80,7 +160,7 @@ window.onload = function(e){
                 c0 = [start[0]-1380, start[1]]
                 var n = [start[0] + (1083*Math.cos(angle)), start[1] + (1083*Math.sin(angle))]
                 line.push(n)
-                line.push(n[0]+845, n[1])
+                line.push(n[0]+845-r1, n[1])
                 c1 = [n[0]+845, n[1]]
             break;
 
@@ -93,7 +173,7 @@ window.onload = function(e){
                 line.push(n)
                 line.push(n[0]+828, n[1])
                 line.push(n[0]+828, n[1]-355)
-                line.push(n[0]+828+885, n[1]-355)
+                line.push(n[0]+828+885-r1, n[1]-355)
                 c1 = [n[0]+828+885, n[1]-355]
                 break;
 
@@ -103,7 +183,7 @@ window.onload = function(e){
                 c0 = [start[0]-1300, start[1]+504]
                 var n = [start[0] + (ad*Math.cos(angle)), start[1] + (ad*Math.sin(angle))]
                 line.push(n)
-                line.push(n[0]+1606, n[1])
+                line.push(n[0]+1606-r1, n[1])
                 c1 = [n[0]+1606, n[1]]
             break;
         }
@@ -111,13 +191,56 @@ window.onload = function(e){
         let drawnLine = drawLine(colours[i], line, "logo pl_" + i)
         let circle0 = drawCircle(colours[i], r0, c0, "logo c0_" + i)
         let circle1 = drawCircle(colours[i], r1, c1, "logo c1_" + i)
+
+        components.push({l: drawnLine, c0: circle0, c1: circle1});
+
         makeInteractive(i, drawnLine, circle0, circle1)
+
+        window.setTimeout(function() {
+            randomRemove(i);
+        }, (Math.random() * 25 + 5) * 1000);
+
     }
 
 }
 
+function polyLineLength(polyline) {
+    let sum = 0;
+    for (var i = 0 ; i < polyline.points.numberOfItems;i++) {
+        var pos = polyline.points.getItem(i);
+        if (i > 0) {
+            sum += Math.sqrt(Math.pow((pos.x - prevPos.x), 2) + Math.pow((pos.y - prevPos.y), 2));
+        }
+        prevPos = pos;
+    }
+    return sum;
+
+}
 
 function makeInteractive(i, l, c0, c1) {
+
+    let time = Math.random() * 2 + 2;
+
+    c0.style.strokeDasharray = polyLineLength(l);
+    c0.style.strokeDashoffset = polyLineLength(l);
+    c0.style.animation = "dash " + time + "s ease-in-out forwards";
+    c0.style.transition = "0.3s";
+    c0.style.visibility = "hidden";
+    c0.style.visibility = "hidden";
+
+    c1.style.strokeDasharray = "2000";
+    c1.style.strokeDashoffset = "2000";
+    c1.style.opacity = "0.4";
+    c1.style.animation = "dash 1s ease-in-out forwards";
+    c1.style.animationDelay = time - 0.2 + "s";
+    c1.style.transition = "0.3s";
+    c1.style.visibility = "hidden";
+
+    l.style.strokeDasharray = polyLineLength(l);
+    l.style.strokeDashoffset = polyLineLength(l);
+    l.style.animation = "dash " + time + "s ease-in-out forwards";
+    l.style.transition = "0.3s";
+    l.style.visibility = "hidden";
 
 	function biggly() {
 		header.style.backgroundColor = shade(colours[i], 0.66);
