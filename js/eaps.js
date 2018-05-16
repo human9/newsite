@@ -196,10 +196,6 @@ window.onload = function(e){
 
         makeInteractive(i, drawnLine, circle0, circle1)
 
-        window.setTimeout(function() {
-            randomRemove(i);
-        }, (Math.random() * 25 + 5) * 1000);
-
     }
 
 }
@@ -219,7 +215,7 @@ function polyLineLength(polyline) {
 
 function makeInteractive(i, l, c0, c1) {
 
-    let time = Math.random() * 2 + 2;
+    let time = Math.random() + 2;
 
     c0.style.strokeDasharray = polyLineLength(l);
     c0.style.strokeDashoffset = polyLineLength(l);
