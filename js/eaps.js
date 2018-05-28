@@ -201,6 +201,15 @@ window.onload = function(e){
 
         makeInteractive(i, drawnLine, circle0, circle1, imgbgrnd);
 
+
+		$('*[class~="page-scroll"]').bind('click', function(event) {
+			var $anchor = $(this);
+			$('html, body').stop().animate({
+				scrollTop: $($anchor.attr('href')).offset().top
+			}, 1500, 'easeInOutExpo');
+			event.preventDefault();
+		});
+
     }
 	svg.appendChild(defs);
 
@@ -288,6 +297,10 @@ function makeInteractive(i, l, c0, c1, img) {
 
 function drawCircle(color, image, r, pos, cl)
 {
+    let a = document.createElementNS(svgNS, 'a');
+    a.setAttribute('class', "page-scroll");
+    a.setAttribute('href', "#speakers");
+    a.setAttribute('style', "cursor: pointer");
     let c = document.createElementNS(svgNS, 'circle');
     c.setAttribute('class', cl);
     c.setAttribute('cx', pos[0]);
@@ -297,7 +310,8 @@ function drawCircle(color, image, r, pos, cl)
     if(!image) c.setAttribute('fill', shade(color, 0.66));
     c.setAttribute('stroke', color);
     c.setAttribute('stroke-width', lw);
-    svg.appendChild(c);
+	a.appendChild(c);
+    svg.appendChild(a);
 	return c;
 }
 
