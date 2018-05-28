@@ -1,5 +1,6 @@
 var svg =  document.getElementById('svg_region');
 var svgNS = svg.namespaceURI;
+var defs = document.createElementNS(svgNS, 'defs');
 var header =  document.getElementById('header');
 var headtext =  document.getElementById('headtext');
 
@@ -10,6 +11,7 @@ var angle = 0.567232 // angle of the thingy
 
 var r0 = 38 + lw/2
 var r1 = 100
+var i1 = r1*1.3;
 
 var leaf = '#4eae33'
 var mind = '#64c5e4'
@@ -19,6 +21,8 @@ var vrus = '#f39323'
 var cncr = '#f3e600'
 
 colours = [leaf, mind, comp, gene, vrus, cncr]
+
+images = ["Ecology.png", "Neurobiology.png", "Bioinformatics.png", "Genetics_Cellbiology.png", "Immunology_Virology.png", "Cancer.png"]
 
 components = [];
 
@@ -189,14 +193,16 @@ window.onload = function(e){
         }
 
         let drawnLine = drawLine(colours[i], line, "logo pl_" + i)
-        let circle0 = drawCircle(colours[i], r0, c0, "logo c0_" + i)
-        let circle1 = drawCircle(colours[i], r1, c1, "logo c1_" + i)
+        let circle0 = drawCircle(colours[i], null, r0, c0, "logo c0_" + i)
+		let imgbgrnd = drawImage(images[i], colours[i], i1, c1);
+        let circle1 = drawCircle(colours[i], images[i], r1, c1, "logo c1_" + i)
 
         components.push({l: drawnLine, c0: circle0, c1: circle1});
 
-        makeInteractive(i, drawnLine, circle0, circle1)
+        makeInteractive(i, drawnLine, circle0, circle1, imgbgrnd);
 
     }
+	svg.appendChild(defs);
 
 }
 
@@ -213,7 +219,7 @@ function polyLineLength(polyline) {
 
 }
 
-function makeInteractive(i, l, c0, c1) {
+function makeInteractive(i, l, c0, c1, img) {
 
     let time = Math.random() + 2;
 
@@ -223,6 +229,8 @@ function makeInteractive(i, l, c0, c1) {
     c0.style.transition = "0.3s";
     c0.style.visibility = "hidden";
     c0.style.visibility = "hidden";
+    
+    img.style.transition = "0.3s";
 
     c1.style.strokeDasharray = "2000";
     c1.style.strokeDashoffset = "2000";
@@ -242,18 +250,18 @@ function makeInteractive(i, l, c0, c1) {
 		header.style.backgroundColor = shade(colours[i], 0.66);
 		headtext.style.color = shade(colours[i], -0.66);
 		c0.setAttribute('r', r0+20);
-		c1.setAttribute('r', r1 + 20);
 		c0.setAttribute('fill', 'white');
-		c1.setAttribute('fill', 'white');
+		img.setAttribute('fill', 'white');
+		c1.setAttribute('r', r1 + 20);
 		l.setAttribute('stroke-width', lw+10);
         l.setAttribute('stroke-linejoin', 'round');
 	}
 
 	function smally() {
 		c0.setAttribute('r', r0);
-		c1.setAttribute('r', r1);
 		c0.setAttribute('fill', shade(colours[i], 0.66));
-		c1.setAttribute('fill', shade(colours[i], 0.66));
+		img.setAttribute('fill', shade(colours[i], 0.66));
+		c1.setAttribute('r', r1);
 		l.setAttribute('stroke-width', lw);
         l.setAttribute('stroke-linejoin', 'round');
 	}
@@ -276,21 +284,49 @@ function makeInteractive(i, l, c0, c1) {
     l.addEventListener("mouseout", function(event){
 		smally();
 	});
-
 }
 
-function drawCircle(color, r, pos, cl)
+function drawCircle(color, image, r, pos, cl)
 {
     let c = document.createElementNS(svgNS, 'circle');
     c.setAttribute('class', cl);
     c.setAttribute('cx', pos[0]);
     c.setAttribute('cy', pos[1]);
     c.setAttribute('r', r);
-    c.setAttribute('fill', shade(color, 0.66));
+    c.setAttribute('fill', 'url(#'+image+')');
+    if(!image) c.setAttribute('fill', shade(color, 0.66));
     c.setAttribute('stroke', color);
     c.setAttribute('stroke-width', lw);
     svg.appendChild(c);
 	return c;
+}
+
+function drawImage(image, color,  h, pos) {
+	let i = document.createElementNS(svgNS, 'image');
+	var h = 0.6;
+	i.setAttribute('href', 'img/themes/' + image);
+	i.setAttribute('preserveAspectRatio', 'none');
+	i.setAttribute('x', (1-h)/2);
+	i.setAttribute('y', (1-h)/2);
+	i.setAttribute('height', h);
+	i.setAttribute('width', h);
+
+	let p = document.createElementNS(svgNS, 'pattern');
+	p.setAttribute('id', image);
+	p.setAttribute('patternContentUnits', 'objectBoundingBox');
+	p.setAttribute('height', '100%');
+	p.setAttribute('width', '100%');
+
+	let r = document.createElementNS(svgNS, 'rect');
+	r.setAttribute('height', '100%');
+	r.setAttribute('width', '100%');
+    r.setAttribute('fill', shade(color, 0.66));
+
+	p.appendChild(r);
+	p.appendChild(i);
+	defs.appendChild(p);
+
+	return r;
 }
 
 function drawLine(color, points, cl)
