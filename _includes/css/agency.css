@@ -57,6 +57,10 @@ h6 {
     font-weight: 700;
 }
 
+.img-speaker {
+	height: 200px;
+}
+
 .img-centered {
     margin: 0 auto;
 }

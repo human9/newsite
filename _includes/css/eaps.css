@@ -6,6 +6,10 @@
   top: -20px;
 }
 
+.team-member {
+	color: #595959;
+}
+
 .navbar {
   min-height: 30px;
 }
