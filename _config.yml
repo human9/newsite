@@ -6,8 +6,6 @@ title: EAPS18
 email: your-email@domain.com
 description: "EMBL Australia Postgraduate Symposium 2018"
 
-
-# Team names, titles and social links
 people:
 - name: TBA
   pic: placeholder
@@ -46,12 +44,8 @@ social:
   - title: twitter
     url: https://twitter.com/EMBLAuSymposium
 
-
-# Postal address (add as many lines as necessary)
-address:
-  - line: 3481 Melrose Place
-  - line: Beverly Hills, CA 90210
-
 # Build settings
 markdown: kramdown
 permalink: pretty
+sass:
+    style: compressed
