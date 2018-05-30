@@ -9,19 +9,35 @@ description: "EMBL Australia Postgraduate Symposium 2018"
 
 # Team names, titles and social links
 people:
-- name: Mystery Speaker
+- name: TBA
   pic: placeholder
-  position: TBA
+  theme: Ecology
+  id: Ecology
 
-- name: Mystery Speaker
+- name: TBA
   pic: placeholder
-  position: TBA
+  theme: Oncology
+  id: Oncology
 
-
-- name: Mystery Speaker
+- name: TBA
   pic: placeholder
-  position: TBA
+  theme: Neurobiology
+  id: Neurobiology
 
+- name: TBA
+  pic: placeholder
+  theme: Bioinformatics
+  id: Bioinformatics
+
+- name: TBA
+  pic: placeholder
+  theme: Genetics and Cell Biology
+  id: Genetics_and_Cell_Biology
+
+- name: TBA
+  pic: placeholder
+  theme: Virology and Immunology
+  id: Virology_and_Immunology
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:

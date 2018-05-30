@@ -24,6 +24,8 @@ colours = [leaf, mind, comp, gene, vrus, cncr]
 
 images = ["Ecology.png", "Neurobiology.png", "Bioinformatics.png", "Genetics_Cellbiology.png", "Immunology_Virology.png", "Cancer.png"]
 
+themes = ["Ecology", "Neurobiology", "Bioinformatics", "Genetics_and_Cell_Biology", "Virology_and_Immunology", "Oncology"];
+
 components = [];
 
 var active = 6;
@@ -193,19 +195,19 @@ window.onload = function(e){
         }
 
         let drawnLine = drawLine(colours[i], line, "logo pl_" + i)
-        let circle0 = drawCircle(colours[i], null, r0, c0, "logo c0_" + i)
+        let circle0 = drawCircle(themes[i], colours[i], null, r0, c0, "logo c0_" + i)
 		let imgbgrnd = drawImage(images[i], colours[i], i1, c1);
-        let circle1 = drawCircle(colours[i], images[i], r1, c1, "logo c1_" + i)
+        let circle1 = drawCircle(themes[i], colours[i], images[i], r1, c1, "logo c1_" + i)
 
         components.push({l: drawnLine, c0: circle0, c1: circle1});
 
         makeInteractive(i, drawnLine, circle0, circle1, imgbgrnd);
 
 
-		$('*[class~="page-scroll"]').bind('click', function(event) {
+		$('*[class~="svg-scroll"]').bind('click', function(event) {
 			var $anchor = $(this);
 			$('html, body').stop().animate({
-				scrollTop: $($anchor.attr('href')).offset().top
+				scrollTop: $($anchor.attr('href')).offset().top - 60
 			}, 1500, 'easeInOutExpo');
 			event.preventDefault();
 		});
@@ -295,11 +297,11 @@ function makeInteractive(i, l, c0, c1, img) {
 	});
 }
 
-function drawCircle(color, image, r, pos, cl)
+function drawCircle(theme, color, image, r, pos, cl)
 {
     let a = document.createElementNS(svgNS, 'a');
-    a.setAttribute('class', "page-scroll");
-    a.setAttribute('href', "#speakers");
+    a.setAttribute('class', "svg-scroll");
+    a.setAttribute('href', "#" + theme);
     a.setAttribute('style', "cursor: pointer");
     let c = document.createElementNS(svgNS, 'circle');
     c.setAttribute('class', cl);
