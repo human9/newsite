@@ -15,8 +15,16 @@
 }
 
 .navbar-brand {
-  padding: 5px 5px 5px;
+  padding: 5px;
 }
+
+@media(max-width:768px) {
+  .navbar-brand {
+    padding: 12px;
+  }
+}
+
+
 
 .navbar-nav > li > a {
   padding-top: 10px;

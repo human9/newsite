@@ -131,7 +131,7 @@ window.onload = function(e){
 			var $anchor = $(this);
 			$('html, body').stop().animate({
 				scrollTop: $($anchor.attr('href')).offset().top - 70
-			}, 1500, 'easeInOutExpo');
+			}, 1000, 'easeInOutExpo');
 			event.preventDefault();
 		});
 
