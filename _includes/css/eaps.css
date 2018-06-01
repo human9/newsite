@@ -38,3 +38,17 @@
     visibility: visible;
   }
 }
+
+.social-thing {
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-origin: content-box;
+  padding: 8px;
+}
+
+a.twitter {
+  background-image: url("/img/social/twitter.svg");
+}
+a.facebook {
+  background-image: url("/img/social/facebook.svg");
+}
