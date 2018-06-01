@@ -30,83 +30,6 @@ components = [];
 
 var active = 6;
 
-function randomPath(i) {
-
-    let c0 = components[i].c0;
-    let c1 = components[i].c1;
-    let l = components[i].l;
-
-    svg.removeChild(l);
-    svg.removeChild(c0);
-    svg.removeChild(c1);
-
-    let time = Math.random() * 2 + 2;
-    c0.style.strokeDasharray = polyLineLength(l);
-    c0.style.strokeDashoffset = polyLineLength(l);
-    c0.style.animation = "dash " + time + "s ease-in-out forwards";
-    c0.style.transition = "0.3s";
-    c0.style.visibility = "hidden";
-    c0.style.visibility = "hidden";
-
-    c1.style.strokeDasharray = "2000";
-    c1.style.strokeDashoffset = "2000";
-    c1.style.opacity = "0.4";
-    c1.style.animation = "dash 1s ease-in-out forwards";
-    c1.style.animationDelay = time - 0.2 + "s";
-    c1.style.transition = "0.3s";
-    c1.style.visibility = "hidden";
-
-    l.style.strokeDasharray = polyLineLength(l);
-    l.style.strokeDashoffset = polyLineLength(l);
-    l.style.animation = "dash " + time + "s ease-in-out forwards";
-    l.style.transition = "0.3s";
-    l.style.visibility = "hidden";
-
-    svg.appendChild(l);
-    svg.appendChild(c0);
-    svg.appendChild(c1);
-
-    // element added back in
-    active += 1;
-
-    window.setTimeout(function() {
-        randomRemove(i);
-    }, (Math.random() * 25 + 5) * 1000);
-}
-
-
-function randomRemove(i) {
-
-    let percent = active / 6; // percentage currently active
-
-    if(percent * Math.random() < 0.3) {
-        console.log("denied")
-        window.setTimeout(function() {
-             randomRemove(i);
-        }, (Math.random() * 25 + 5) * 1000);
-        return;
-    }
-
-
-    // element removed, decrease likelihood others will follow suit.
-    active -= 1;
-
-    let c0 = components[i].c0;
-    let c1 = components[i].c1;
-    let l = components[i].l;
-
-    let time = Math.random() * 2 + 2;
-
-    c0.style.animation = "remove " + time + "s ease-in-out reverse";
-    c1.style.animation = "remove 0.8s ease-in-out reverse";
-    l.style.animation = "remove " + time + "s ease-in-out reverse";
-
-    window.setTimeout(function() {
-        randomPath(i);
-    }, time * 1000 + 500);
-}
-
-
 window.onload = function(e){ 
 
     for (let i = 0; i < colours.length; i++) {
@@ -320,7 +243,7 @@ function drawCircle(theme, color, image, r, pos, cl)
 function drawImage(image, color,  h, pos) {
 	let i = document.createElementNS(svgNS, 'image');
 	var h = 0.6;
-	i.setAttribute('href', 'img/themes/' + image);
+	i.setAttribute('href', '/img/themes/' + image);
 	i.setAttribute('preserveAspectRatio', 'none');
 	i.setAttribute('x', (1-h)/2);
 	i.setAttribute('y', (1-h)/2);
