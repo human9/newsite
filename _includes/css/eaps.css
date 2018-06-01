@@ -18,6 +18,10 @@
   padding: 5px;
 }
 
+.information {
+  color:  #595959;
+}
+
 @media(max-width:768px) {
 
   .navbar-fixed-top {
