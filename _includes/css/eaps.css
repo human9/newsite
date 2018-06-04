@@ -61,12 +61,11 @@
   background-repeat:no-repeat;
   background-position: center center;
   background-origin: content-box;
-  padding: 8px;
 }
 
 a.twitter {
-  background-image: url("/img/social/twitter.svg");
+  background-image: url("/img/social/twitter.png");
 }
 a.facebook {
-  background-image: url("/img/social/facebook.svg");
+  background-image: url("/img/social/facebook.png");
 }
