@@ -117,7 +117,7 @@ window.onload = function(e){
             break;
         }
 
-        let drawnLine = drawLine(colours[i], line, "logo pl_" + i)
+        let drawnLine = drawLine(colours[i], line, "pl_" + i)
         let circle0 = drawCircle(themes[i], colours[i], null, r0, c0, "logo c0_" + i)
 		let imgbgrnd = drawImage(images[i], colours[i], i1, c1);
         let circle1 = drawCircle(themes[i], colours[i], images[i], r1, c1, "logo c1_" + i)
