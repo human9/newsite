@@ -1,14 +1,13 @@
 <!-- Team Section -->
-    <section id="speakers" >
+    <section id="biographies" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Speakers</h2>
-                    <h3 class="section-subheading text-muted">Invited speakers at EAPS18.</h3>
+                    <h3 class="section-subheading text-muted">This page will contain biographies for the invited speakers at EAPS18.</h3>
                 </div>
             </div>
 				<div class="team-member">
-					<img src="/img/people/placeholder.jpg" class="img-responsive img-circle img-speaker" alt="">
 					<h4>Professor Ian Frazer</h4>
 					<p class="text-muted">Keynote Speaker</p>
 				</div>
@@ -17,17 +16,11 @@
                 {% for member in site.people %}
                 <div class="col-sm-4">
                     <div class="team-member"  id="{{ member.id }}">
-                        <img src="/img/people/{{ member.pic }}.jpg" class="img-responsive img-circle img-speaker" alt="">
                         <h4>{{ member.name }}</h4>
                         <p class="text-muted">{{ member.theme }} Speaker</p>
                     </div>
                 </div>
                 {% endfor %}
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Speakers will be updated when they are confirmed!</p>
-                </div>
             </div>
         </div>
     </section>

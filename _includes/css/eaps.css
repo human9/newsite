@@ -34,6 +34,10 @@
 
 }
 
+.twitter-timeline {
+  max-height: 1000px;
+}
+
 
 
 .navbar-nav > li > a {
