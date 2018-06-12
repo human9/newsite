@@ -58,7 +58,7 @@ h6 {
 }
 
 .img-speaker {
-	height: 140px;
+	max-height: 200px;
 }
 
 .img-centered {

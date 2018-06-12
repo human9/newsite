@@ -1,27 +1,38 @@
 <!-- Team Section -->
     <section id="biographies" >
-        <div class="container">
+        <div class="container bios">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Speakers</h2>
-                    <h3 class="section-subheading text-muted">This page will contain biographies for the invited speakers at EAPS18.</h3>
+                    <h3 class="section-subheading text-muted">Read on for our lineup of speakers for EAPS 2018:</h3>
                 </div>
             </div>
-				<div class="team-member">
-					<h4>Professor Ian Frazer</h4>
-					<p class="text-muted">Keynote Speaker</p>
-				</div>
+				<div class="bio_text row text-align-left team-member">
+                    <div class="bio-image col-sm-4">
+                        <div id="Keynote">
+                            <img src="/img/people/Ian_Frazer_300px.jpg" class="img-responsive img-circle" alt="">
+                        </div>
+                    </div>
+                    <div class="col-sm-8 text-justify">
+                      <h4>Prof. Ian Frazer</h4>
+                      <p class="text-muted">Keynote Speaker</p>
+                      <p>Originally trained as a renal physician and clinical immunologist at Edinburgh University, Professor Ian Frazer came to Australia and joined the Walter and Eliza Hall Institute (WEHI) in 1981, where he became particularly interested in human papilloma viruses (HPV). Frazer’s scientific achievements include the groundbreaking development of a vaccine preventing HPV infection and cervical cancer. He has continued in this line of work, heading a biotechnology company, Admedus Vaccines, working on new vaccine technologies. Professor Frazer is the current president of the Australian Academy of Health and Medical Sciences, and in 2011 became the founding CEO and Director of Research at the Translational Research Institute (TRI) in Brisbane, however he has since relinquished this role to focus more on his research. He has received a number of highly distinguished awards for his work, including the CSIRO Eureka Prize for Leadership in Science (2005), Australian of the Year in 2006, Prime Ministers Prize for Science and the Balzan Prize (2008), and was appointed Companion of the Order of Australia in 2013.</p>
+                    </div>
+                </div>
 
-            <div class="row">
                 {% for member in site.people %}
-                <div class="col-sm-4">
-                    <div class="team-member"  id="{{ member.id }}">
-                        <h4>{{ member.name }}</h4>
-                        <p class="text-muted">{{ member.theme }} Speaker</p>
-                        <p>{{ member.bio }}</p>
+                <div class="bio_text row text-align-left team-member">
+                    <div class="bio-image col-sm-4">
+                        <div id="{{ member.id }}">
+                            <img src="/img/people/{{ member.pic }}.jpg" class="img-responsive img-circle" alt="">
+                        </div>
+                    </div>
+                    <div class="col-sm-8 text-justify">
+                      <h4>{{ member.name }}</h4>
+                      <p class="text-muted">{{ member.theme }} Speaker</p>
+                      <p>{{ member.bio }}</p>
                     </div>
                 </div>
                 {% endfor %}
-            </div>
         </div>
     </section>

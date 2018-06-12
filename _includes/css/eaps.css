@@ -38,8 +38,18 @@
   max-height: 1000px;
 }
 
+.bios {
+  max-width: 900px;
+}
 
+.bio-image {
+  margin-top: 25px;
+}
 
+.bio_text.h4 {
+    text-transform: none;
+
+}
 .navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;
