@@ -4,11 +4,13 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Speakers</h2>
-                    <h3 class="section-subheading text-muted">Invited speakers at EAPS18.</h3>
+                    <h3 class="section-subheading text-muted">As well as our keynote speaker Professor Ian Frazer, an invited speaker will be presenting for each sub-theme at EAPS18.</h3>
                 </div>
             </div>
 				<div class="team-member">
-					<img src="/img/people/Ian_Frazer_300px.jpg" class="img-responsive img-circle img-speaker" alt="">
+                    <a href="/speakers/#Keynote">
+					   <img src="/img/people/Ian_Frazer_300px.jpg" class="img-responsive img-circle img-speaker" alt="">
+                    </a>
 					<h4>Prof. Ian Frazer</h4>
 					<p class="text-muted">Keynote Speaker</p>
 				</div>
@@ -17,7 +19,9 @@
                 {% for member in site.people %}
                 <div class="col-sm-4">
                     <div class="team-member"  id="{{ member.id }}">
-                        <img src="/img/people/{{ member.pic }}.jpg" class="img-responsive img-circle img-speaker" alt="">
+                        <a href="/speakers/#{{ member.id }}">
+                            <img src="/img/people/{{ member.pic }}.jpg" class="img-responsive img-circle img-speaker" alt="">
+                        </a>
                         <h4>{{ member.name }}</h4>
                         <p class="text-muted">{{ member.theme }} Speaker</p>
                     </div>
@@ -25,8 +29,8 @@
                 {% endfor %}
             </div>
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Speakers will be updated when they are confirmed!</p>
+                <div class="col-lg-8 col-lg-offset-2 text-center"><br><br>
+                    <a href="/speakers"><p class="large text-muted">Select an individual speaker or click here for detailed speaker biographies.</p></a>
                 </div>
             </div>
         </div>

@@ -8,10 +8,9 @@
                 </div>
             </div>
 				<div class="bio_text row text-align-left team-member">
+                    <div id="Keynote" style="position: relative; top:-50px;"></div>
                     <div class="bio-image col-sm-4">
-                        <div id="Keynote">
-                            <img src="/img/people/Ian_Frazer_300px.jpg" class="img-responsive img-circle" alt="">
-                        </div>
+                        <img src="/img/people/Ian_Frazer_300px.jpg" class="img-responsive img-circle" alt="">
                     </div>
                     <div class="col-sm-8 text-justify">
                       <h4>Prof. Ian Frazer</h4>
@@ -22,10 +21,9 @@
 
                 {% for member in site.people %}
                 <div class="bio_text row text-align-left team-member">
+                    <div id="{{ member.id }}" style="position: relative; top:-50px;"></div>
                     <div class="bio-image col-sm-4">
-                        <div id="{{ member.id }}">
-                            <img src="/img/people/{{ member.pic }}.jpg" class="img-responsive img-circle" alt="">
-                        </div>
+                        <img src="/img/people/{{ member.pic }}.jpg" class="img-responsive img-circle" alt="">
                     </div>
                     <div class="col-sm-8 text-justify">
                       <h4>{{ member.name }}</h4>
