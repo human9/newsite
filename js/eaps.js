@@ -155,30 +155,35 @@ function polyLineLength(polyline) {
 
 function makeInteractive(i, l, c0, c1, img) {
 
-    let time = Math.random() + 2;
+    if( /MSIE 10/i.test(navigator.userAgent) || /MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent) || /Edge\/\d./i.test(navigator.userAgent) ) {
+        // We're on IE or Edge, which do not support the CSS SVG line animations. We therefore disable them.
+    }
+    else {
+        let time = Math.random() + 2;
 
-    c0.style.strokeDasharray = polyLineLength(l);
-    c0.style.strokeDashoffset = polyLineLength(l);
-    c0.style.animation = "dash " + time + "s ease-in-out forwards";
-    c0.style.transition = "0.3s";
-    c0.style.visibility = "hidden";
-    c0.style.visibility = "hidden";
-    
-    img.style.transition = "0.3s";
+        c0.style.strokeDasharray = polyLineLength(l);
+        c0.style.strokeDashoffset = polyLineLength(l);
+        c0.style.animation = "dash " + time + "s ease-in-out forwards";
+        c0.style.transition = "0.3s";
+        c0.style.visibility = "hidden";
+        c0.style.visibility = "hidden";
+        
+        img.style.transition = "0.3s";
 
-    c1.style.strokeDasharray = "2000";
-    c1.style.strokeDashoffset = "2000";
-    c1.style.opacity = "0.4";
-    c1.style.animation = "dash 1s ease-in-out forwards";
-    c1.style.animationDelay = time - 0.2 + "s";
-    c1.style.transition = "0.3s";
-    c1.style.visibility = "hidden";
+        c1.style.strokeDasharray = "2000";
+        c1.style.strokeDashoffset = "2000";
+        c1.style.opacity = "0.4";
+        c1.style.animation = "dash 1s ease-in-out forwards";
+        c1.style.animationDelay = time - 0.2 + "s";
+        c1.style.transition = "0.3s";
+        c1.style.visibility = "hidden";
 
-    l.style.strokeDasharray = polyLineLength(l);
-    l.style.strokeDashoffset = polyLineLength(l);
-    l.style.animation = "dash " + time + "s ease-in-out forwards";
-    l.style.transition = "0.3s";
-    l.style.visibility = "hidden";
+        l.style.strokeDasharray = polyLineLength(l);
+        l.style.strokeDashoffset = polyLineLength(l);
+        l.style.animation = "dash " + time + "s ease-in-out forwards";
+        l.style.transition = "0.3s";
+        l.style.visibility = "hidden";
+    }
 
 	function biggly() {
 		header.style.backgroundColor = shade(colours[i], 0.66);
