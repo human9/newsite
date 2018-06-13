@@ -22,6 +22,10 @@
   color:  #595959;
 }
 
+.section-heading {
+  padding-top: 25px;
+}
+
 @media(max-width:768px) {
 
   .navbar-fixed-top {
