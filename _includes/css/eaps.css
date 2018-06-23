@@ -36,6 +36,17 @@
   }
 }
 
+.welcome {
+  max-width: 800px;
+  padding: 10px;
+  color: #595959;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1em;
+      font-family: {{ site.data.template.font.secondary }};
+      
+  }
+
 .register {
   max-width: 800px;
   padding: 10px;
