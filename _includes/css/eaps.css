@@ -50,10 +50,18 @@
 .register {
   max-width: 800px;
   padding: 10px;
-  color: black;
+  color: #595959;
   margin-left: auto;
   margin-right: auto;
   }
+
+.register h3 {
+  color: black;
+}
+
+#abstracts {
+  padding-top: 0px;
+}
 
 .twitter-timeline {
   max-height: 1000px;
