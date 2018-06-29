@@ -43,9 +43,22 @@
   margin-left: auto;
   margin-right: auto;
   font-size: 1.1em;
-      font-family: {{ site.data.template.font.secondary }};
+  font-family: {{ site.data.template.font.secondary }};
       
   }
+
+  .venue {
+  font-size: 1.1em;
+  font-family: {{ site.data.template.font.secondary }};
+  
+  }
+
+#venue .container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
 
 .register {
   max-width: 800px;
