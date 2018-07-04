@@ -8,11 +8,11 @@ description: "EMBL Australia Postgraduate Symposium 2018"
 
 people:
 
-- name: Dr. C Glenn Begley
-  pic: Glenn_Begley_300px
-  theme: Oncology
-  id: Oncology
-  bio: Dr. Glenn Begley achieved his PhD in molecular biology and cellular biology at the Walter and Eliza Hall Institute (WEHI) under Professor Don Metcalf, whilst working as an oncologist at the Royal Melbourne Hospital. Dr. Begley spent 3 years at the National Cancer Institute in the USA before returning to WEHI to continue the work he began with the Metcalf laboratory team. He was a part of the Metcalf laboratory team that identified the human G-CSF (colony stimulating factor) molecule now used internationally and routinely to fortify cancer patients to endure the rigors of chemotherapy treatment; his work has revolutionised treatment for cancer patients. In addition to his cancer research, Dr Begley has championed the importance of scientific integrity, and exposed the irreproducibility of a high proportion of cancer research findings. He also has significant experience at an industry level, in the capacity of Chief Scientific Officer at several pharmaceutical companies; Dr. Begley is currently the Chief Scientific Officer of BioCurate, whose purpose is to translate important discoveries into new therapies.
+- name: A/Prof. Natalie Sims
+  pic: Natalie_Sims_300px
+  theme: Genetics and Cell Biology
+  id: Genetics_and_Cell_Biology
+  bio: A/Prof. Natalie Sims was awarded her PhD from the University of Adelaide. She completed postdoctoral studies at the Garvan Institute (Sydney) and Yale University before starting her own laboratory in Melbourne in 2001. A/Prof. Sims is currently the deputy director of St Vincent’s Institute of Medical Research (SVI) in Melbourne, and heads the Bone Cell Biology and Disease Unit, as well as serving as editor and associate editor for several research journals and President-elect of the Australia and New Zealand Bone and Mineral Society. A/Prof. Sims is internationally recognised for her expertise in the study of gene knockout animals and animal models of bone diseases, having been awarded the Fuller-Albright Award in 2010 for her work in bone and mineral research by the American Society of Bone and Mineral Research, as well as the Herbert A Fleisch medal in 2013, honouring her outstanding and groundbreaking achievements in basic bone science, by the International Bone and Mineral Society.
 
 - name: A/Prof. Cedric Bardy
   pic: Cedric_Bardy_300px
@@ -20,17 +20,17 @@ people:
   id: Neurobiology
   bio: A/Prof. Cedric Bardy achieved his PhD at the University of Sydney in 2008 before returning to Europe as a Postdoctoral fellow at Institut Pasteur, Paris, France. Since then he has worked as a Marie-Curie fellow in the USA and France, and has most recently been appointed Associate Professor/Senior Research Fellow, heading his own lab in the Mind & Brain theme at the South Australian Health and Medical Research Institute (SAHMRI), and senior lecturer at Flinders University. An internationally recognised leader in the field of human neural stem cells, A/Prof Bardy’s lab uses electrophysiology and single cell genetics to develop and improve in vitro models and new biotechnologies to unravel the effect of neurological disorders at the cellular and molecular level. In addition to his own research in human neurophysiology and genetics, A/Prof Bardy serves as a scientific consultant for biotech companies in the stem cell field.
 
-- name: Dr. Kim-Anh Lê Cao
-  pic: placeholder
-  theme: Bioinformatics
-  id: Bioinformatics
-  bio: Dr Kim-Anh Lê Cao graduated from her PhD in 2008 at Université de Toulouse, France, and was awarded the triennial Marie-Jeanne Duhamel prize from the French Statistical Society for her thesis in Applied Statistics. Dr Lê Cao moved to the Institute for Molecular Bioscience (IMB) in Queensland as a postdoctoral fellow. Here she developed a multidisciplinary approach to her research, particularly through her position as a Research Biostatistician at QFAB (UQ) and the extensive network of collaborators she developed. Dr Lê Cao's main research focus is on variable selection for biological (`omics') data coming from different functional levels by the means of multivariate dimension reduction approaches. This includes developing the statistical R toolkit mixOmics that is dedicated to the integrative analysis of `omics' data. Dr Lê Cao was awarded the Career Development Fellowship from the NHMRC (2015-2019), and established and led the UQ Diamantina Institute (UQDI) Biostatistics Facility to provide statistical support to researchers. In 2017, Dr. Lê Cao moved to the University of Melbourne, working as a Senior Lecturer in Statistical Genomics.
+- name: A/Prof. Tracy Ainsworth
+  pic: Tracy_Ainsworth_300px
+  theme: Ecology
+  id: Ecology
+  bio: After completing her PhD in Marine Sciences in 2007 at the University of Queensland, A/Prof. Tracy Ainsworth moved to the ARC Centre of Excellence for Coral Reef Studies at James Cook University. During her time there as Principal Research Fellow, A/Prof Ainsworth received prestigious awards including an Australian Research Council Super Science Research Fellowship (2011-2014) and an Australian Research Council Postdoctoral Fellowship (2008-2011). A/Prof. Ainsworth is currently an Associate Professor in the School of Biological, Earth and Environmental Sciences (BEES) at The University of New South Wales, Sydney, where her research leads the way in understanding the impact of environmental change on corals and marine animals. A/Prof Ainsworth’s extensive work on the stress mechanisms of coral in the Great Barrier Reef was recently published in the prestigious journal, Science.
 
-- name: A/Prof. Natalie Sims
-  pic: Natalie_Sims_300px
-  theme: Genetics and Cell Biology
-  id: Genetics_and_Cell_Biology
-  bio: A/Prof. Natalie Sims was awarded her PhD from the University of Adelaide. She completed postdoctoral studies at the Garvan Institute (Sydney) and Yale University before starting her own laboratory in Melbourne in 2001. A/Prof. Sims is currently the deputy director of St Vincent’s Institute of Medical Research (SVI) in Melbourne, and heads the Bone Cell Biology and Disease Unit, as well as serving as editor and associate editor for several research journals and President-elect of the Australia and New Zealand Bone and Mineral Society. A/Prof. Sims is internationally recognised for her expertise in the study of gene knockout animals and animal models of bone diseases, having been awarded the Fuller-Albright Award in 2010 for her work in bone and mineral research by the American Society of Bone and Mineral Research, as well as the Herbert A Fleisch medal in 2013, honouring her outstanding and groundbreaking achievements in basic bone science, by the International Bone and Mineral Society.
+- name: Dr. C Glenn Begley
+  pic: Glenn_Begley_300px
+  theme: Oncology
+  id: Oncology
+  bio: Dr. Glenn Begley achieved his PhD in molecular biology and cellular biology at the Walter and Eliza Hall Institute (WEHI) under Professor Don Metcalf, whilst working as an oncologist at the Royal Melbourne Hospital. Dr. Begley spent 3 years at the National Cancer Institute in the USA before returning to WEHI to continue the work he began with the Metcalf laboratory team. He was a part of the Metcalf laboratory team that identified the human G-CSF (colony stimulating factor) molecule now used internationally and routinely to fortify cancer patients to endure the rigors of chemotherapy treatment; his work has revolutionised treatment for cancer patients. In addition to his cancer research, Dr Begley has championed the importance of scientific integrity, and exposed the irreproducibility of a high proportion of cancer research findings. He also has significant experience at an industry level, in the capacity of Chief Scientific Officer at several pharmaceutical companies; Dr. Begley is currently the Chief Scientific Officer of BioCurate, whose purpose is to translate important discoveries into new therapies.
 
 - name: Prof. Jenny Martin
   pic: Jenny_Martin_300px
@@ -38,11 +38,11 @@ people:
   id: Virology_and_Immunology
   bio: Achieving her PhD from the University of Oxford in 1990, Professor Jenny Martin’s background is in pharmacy. Prof. Martin returned to Australia with an ARC Queen Elizabeth II Fellowship in 1993, establishing the first protein crystallography lab at the University of Queensland, now known as the UQ Remote Operation Crystallisation and X-ray Diffraction (UQ ROCX) Facility. Prof. Martin has received several distinguished fellowships, including being one of only 2 women and 15 researchers Australia-wide to receive an inaugural ARC Australian Laureate Fellowship in 2009. Prof. Martin is currently the Director of the Griffith Institute for Drug Discovery at Griffith University, QLD, and is a strong advocate for equal opportunity and gender balance in academia. Her work utilises protein crystallography for structure determination of disease-causing proteins and the application of structural biology in early stage drug discovery. Among her many prestigious honours and awards, Professor Martin was elected as a Fellow of the Australian Academy of Science, and recently made a Companion of the Order of Australia for her contributions to science and to gender equality.
 
-- name: A/Prof. Tracy Ainsworth
+- name: Dr. Kim-Anh Lê Cao
   pic: placeholder
-  theme: Ecology
-  id: Ecology
-  bio: After completing her PhD in Marine Sciences in 2007 at the University of Queensland, A/Prof. Tracy Ainsworth moved to the ARC Centre of Excellence for Coral Reef Studies at James Cook University. During her time there as Principal Research Fellow, A/Prof Ainsworth received prestigious awards including an Australian Research Council Super Science Research Fellowship (2011-2014) and an Australian Research Council Postdoctoral Fellowship (2008-2011). A/Prof. Ainsworth is currently an Associate Professor in the School of Biological, Earth and Environmental Sciences (BEES) at The University of New South Wales, Sydney, where her research leads the way in understanding the impact of environmental change on corals and marine animals. A/Prof Ainsworth’s extensive work on the stress mechanisms of coral in the Great Barrier Reef was recently published in the prestigious journal, Science.
+  theme: Bioinformatics
+  id: Bioinformatics
+  bio: Dr Kim-Anh Lê Cao graduated from her PhD in 2008 at Université de Toulouse, France, and was awarded the triennial Marie-Jeanne Duhamel prize from the French Statistical Society for her thesis in Applied Statistics. Dr Lê Cao moved to the Institute for Molecular Bioscience (IMB) in Queensland as a postdoctoral fellow. Here she developed a multidisciplinary approach to her research, particularly through her position as a Research Biostatistician at QFAB (UQ) and the extensive network of collaborators she developed. Dr Lê Cao's main research focus is on variable selection for biological (`omics') data coming from different functional levels by the means of multivariate dimension reduction approaches. This includes developing the statistical R toolkit mixOmics that is dedicated to the integrative analysis of `omics' data. Dr Lê Cao was awarded the Career Development Fellowship from the NHMRC (2015-2019), and established and led the UQ Diamantina Institute (UQDI) Biostatistics Facility to provide statistical support to researchers. In 2017, Dr. Lê Cao moved to the University of Melbourne, working as a Senior Lecturer in Statistical Genomics.
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
