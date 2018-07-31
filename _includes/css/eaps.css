@@ -72,6 +72,19 @@
   color: black;
 }
 
+.prog_table {
+  max-width: 1200px;
+  padding: 10px;
+  color: #595959;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+.prog_table h3 {
+  color: black;
+}
+
+
 #abstracts {
   padding-top: 0px;
 }
