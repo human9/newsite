@@ -84,6 +84,14 @@
   color: black;
 }
 
+.programme-table {
+    table-layout: fixed;
+}
+
+.programme-table td {
+    height: 20px;
+    overflow: hidden;
+}
 
 #abstracts {
   padding-top: 0px;
