@@ -144,9 +144,18 @@ a.facebook {
         white-space: nowrap;
 }
 
-  
+  @media(max-width:768px) {
+
 #programme .timeline-panel {
+  padding: 0 0px 0 0px;
 }
+#programme .timeline-heading {
+  padding-top: 16px;
+  padding-left: 90px;
+}
+#programme .timeline-body {
+  padding-top: 16px;
+}}
 #programme {
   color: #595959;
 }
