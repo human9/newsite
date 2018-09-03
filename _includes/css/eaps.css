@@ -6,6 +6,10 @@
   top: -20px;
 }
 
+.section-heading {
+    color: #595959;
+}
+
 .team-member {
 	color: #595959;
 }
@@ -22,6 +26,9 @@
   color:  #595959;
 }
 
+.copyright {
+  color: grey;
+}
 .section-heading {
   padding-top: 25px;
 }
