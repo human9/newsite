@@ -112,9 +112,57 @@
     text-transform: none;
 
 }
+
+.navbar-default .nav li a:focus {
+  color: #fff;
+}
+@media(min-width:768px) {
+  .navbar-dark .nav li a {
+      color: #fff;
+  }
+}
+
 .navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.comp_heading {
+  color: #d3d3d3;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: none;
+  font-family: {{ site.data.template.font.secondary }};
+}
+.comp_text {
+  text-transform: none;
+  max-width: 800px;
+  padding: 10px;
+  color: #d3d3d3;
+  margin-left: auto;
+  margin-right: auto;
+    font-size: 1.1em;
+
+  font-family: {{ site.data.template.font.secondary }};
+
+}
+.competition_bg {
+    background-attachment: scroll;
+    background-image: url('{{ site.baseurl }}/img/sciart_bg.jpg');
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  background-blend-mode: multiply;
+}
+.comp_text h3, h4{
+    color: #d3d3d3;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: none;
+  font-family: {{ site.data.template.font.secondary }};
 }
 
 @keyframes dash {
