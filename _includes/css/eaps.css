@@ -51,6 +51,9 @@
     display: inline-block;
   }
 
+.sponsors {
+  padding-bottom: 20px;
+}
 
 .welcome {
   max-width: 800px;
