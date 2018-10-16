@@ -55,6 +55,10 @@
   padding-bottom: 30px;
 }
 
+.sponsor {
+  padding: 0 30px 30px 30px;
+}
+
 .welcome {
   max-width: 800px;
   padding: 10px;
