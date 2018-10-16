@@ -133,10 +133,6 @@
 
 .comp_heading {
   color: #d3d3d3;
-  margin-left: auto;
-  margin-right: auto;
-  text-transform: none;
-  font-family: {{ site.data.template.font.secondary }};
 }
 .comp_text {
   text-transform: none;
@@ -152,6 +148,7 @@
 }
 .competition_bg {
     background-attachment: scroll;
+	background-color: black;
     background-image: url('{{ site.baseurl }}/img/sciart_bg.jpg');
     background-position: center center;
     background-repeat: none;
@@ -159,14 +156,13 @@
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-  background-blend-mode: multiply;
 }
 .comp_text h4 {
     color: #d3d3d3;
   margin-left: auto;
   margin-right: auto;
-  text-transform: none;
-  font-family: {{ site.data.template.font.secondary }};
+  text-transform: upper;
+  font-family: {{ site.data.template.font.primary }};
 }
 
 @keyframes dash {
