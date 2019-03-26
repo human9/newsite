@@ -200,10 +200,10 @@
 }
 
 a.twitter {
-  background-image: url("/img/social/twitter.png");
+  background-image: url("{{ site.baseurl }}/img/social/twitter.png");
 }
 a.facebook {
-  background-image: url("/img/social/facebook.png");
+  background-image: url("{{ site.baseurl }}/img/social/facebook.png");
 }
 
 .prog_table {

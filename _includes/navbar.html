@@ -12,9 +12,9 @@
                 {% if page.id == 'index' %}
 				<a class="page-scroll" href="#page-top">
                 {% else %}
-                <a href="/">
+                <a href="{{ site.baseurl }}/">
                     {% endif %}
-                    <img src="/img/logos/EAPS18.png" class="navbar-brand page-scroll">
+                    <img src="{{ site.baseurl }}/img/logos/EAPS18.png" class="navbar-brand page-scroll">
 				</a>
             </div>
 
@@ -25,27 +25,27 @@
                         {% if page.id == 'index' %}
                         <a href="#page-top"></a>
                         {% else %}
-                         <a href="/"></a>
+                         <a href="{{ site.baseurl }}/"></a>
                         {% endif %}
 
                     </li>
                     <li>
-                        <a href="/speakers">Speakers</a>
+                        <a href="{{ site.baseurl }}/speakers">Speakers</a>
                     </li>
                     <li>
-                        <a href="/venue">Venue</a>
+                        <a href="{{ site.baseurl }}/venue">Venue</a>
                     </li>
                     <li>
-                        <a href="/programme">Programme</a>
+                        <a href="{{ site.baseurl }}/programme">Programme</a>
                     </li>
                     <li>
-                        <a href="/faq">FAQ</a>
+                        <a href="{{ site.baseurl }}/faq">FAQ</a>
                     </li>
                     <li>
-                        <a href="/competition">Competition</a>
+                        <a href="{{ site.baseurl }}/competition">Competition</a>
                     </li>
                     <li>
-						<a href="/register">Register</a>
+						<a href="{{ site.baseurl }}/register">Register</a>
                     </li>
                 </ul>
             </div>

@@ -248,7 +248,7 @@ function drawCircle(theme, color, image, r, pos, cl)
 function drawImage(image, color,  h, pos) {
 	let i = document.createElementNS(svgNS, 'image');
 	var h = 0.6;
-	i.setAttribute('href', '/img/themes/' + image);
+	i.setAttribute('href', window.location.pathname + '/img/themes/' + image);
 	i.setAttribute('preserveAspectRatio', 'none');
 	i.setAttribute('x', (1-h)/2);
 	i.setAttribute('y', (1-h)/2);
